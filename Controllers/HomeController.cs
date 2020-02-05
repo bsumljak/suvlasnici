@@ -31,7 +31,8 @@ namespace suvlasnici.Controllers
         {
             ViewBag.sjednice = (await _context.Sjednice.ToListAsync());
             ViewBag.raspored = (await _context.RasporedCiscenja.ToListAsync());
-            
+            ViewBag.prijavci = (await _context.Prijavci.ToListAsync());
+
             return View();
 
         }

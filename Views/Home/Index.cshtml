@@ -3,87 +3,123 @@
     ViewData["Title"] = "Home Page";
     ViewBag.Title = "raspored";
     ViewBag.Title = "sjednice";
+    ViewBag.Title = "prijavci";
    
 }
 
-<div class="text-center">
-    <h1 class="display-4">Dobrodošli na web stranicu kućnog savjeta</h1>
-    <p>
+    <div class="text-center">
+        <h1 class="display-4">Dobrodošli na web stranicu kućnog savjeta</h1>
+        <p>
 
 
 
-        <h2>Raspored čišćenja snijega:</h2>
-    </p>
-    <p>
+            <h2>Raspored čišćenja snijega:</h2>
+        </p>
+        <p>
 
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                Datum od:
-            </th>
-            <th>
-                Datum do:
-            </th>
-            <th>
-                Suvlasnik ID:
-            </th>
-            <th>
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var d in ViewBag.raspored)
-        {
+        </p>
+        <table class="table">
             <tr>
-                <td>
-                    @(d.datumod)
-                </td>
-                <td>
-                    @(d.datumdo)
-                </td>
-                <td>
-                    @(d.PopisSuvlsnikaId)
-                </td>
-                <td>
-                </td>
+                <th>
+                    Datum od:
+                </th>
+                <th>
+                    Datum do:
+                </th>
+                <th>
+                    Suvlasnik ID:
+                </th>
+                <th>
+                </th>
+                <th></th>
             </tr>
-        }
 
-    </table>
-    <h2>Popis održanih sjednica Sjednice</h2>
-    <table class="table">
-        <tr>
-            <th>
-                Datum održavanja:
-            </th>
-            <th>
-                Zapisnik
-            </th>
-            <th>
-                Suvlasnik ID
-            </th>
-            <th>
-            </th>
-            <th></th>
-        </tr>
+            @foreach (var d in ViewBag.raspored)
+            {
+                <tr>
+                    <td>
+                        @(d.datumod)
+                    </td>
+                    <td>
+                        @(d.datumdo)
+                    </td>
+                    <td>
+                        @(d.PopisSuvlsnikaId)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
 
-        @foreach (var b in ViewBag.sjednice)
-        {
+        </table>
+        <h2>Popis održanih sjednica Sjednice</h2>
+        <table class="table">
             <tr>
-                <td>
-                    @(b.datum)
-                </td>
-                <td>
-                    @(b.zapisnik)
-                </td>
-                <td>
-                    @(b.PopisSuvlsnikaId)
-                </td>
-                <td>
-                </td>
+                <th>
+                    Datum održavanja:
+                </th>
+                <th>
+                    Zapisnik
+                </th>
+                <th>
+                    Suvlasnik ID
+                </th>
+                <th>
+                </th>
+                <th></th>
             </tr>
-        }
+
+            @foreach (var b in ViewBag.sjednice)
+            {
+                <tr>
+                    <td>
+                        @(b.datum)
+                    </td>
+                    <td>
+                        @(b.zapisnik)
+                    </td>
+                    <td>
+                        @(b.PopisSuvlsnikaId)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
+        </table>
+        <h2>Popis prijavaka</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Datum:
+                    </th>
+                    <th>
+                        Sadržaj prijavka:
+                    </th>
+                    <th>
+                        Suvlasnik:
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var g in ViewBag.prijavci)
+                {
+                    <tr>
+                        <td>
+                            @g.datum)
+                        </td>
+                        <td>
+                            @(g.prijavak)
+                        </td>
+                        <td>
+                            @(g.PopisSuvlsnikaId)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
         </table>
 
-</div>
+    </div>
